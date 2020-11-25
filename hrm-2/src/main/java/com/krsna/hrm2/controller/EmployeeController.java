@@ -74,8 +74,16 @@ public class EmployeeController {
 	
 	@PostMapping(value = "/edit")
 	public String editEmployee(@ModelAttribute("employee") Employee employee) {
-		System.out.println("EmployeeController.editEmployee()");
-		employeeService.createEmployee(employee);
+		System.out.println("EmployeeController.editEmployee()"+employee.getId());
+		Optional<Employee> dbEmployee = employeeService.getEmployeeId(employee.getId());
+		if(dbEmployee.isPresent()) {
+			dbEmployee.get().setFirstName(employee.getFirstName());
+			dbEmployee.get().setLastName(employee.getLastName());
+			dbEmployee.get().setEmail(employee.getEmail());
+			dbEmployee.get().setId(employee.getId());
+		}
+		
+		employeeService.updateEmployee(dbEmployee.get());
 		return "redirect:/";
 	}
 	

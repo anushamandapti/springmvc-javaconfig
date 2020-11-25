@@ -22,6 +22,10 @@ public class EmployeeService {
 		return employeeRepository.save(employee);
 	}
 	
+	public Employee updateEmployee(Employee employee) {
+		return employeeRepository.save(employee);
+	}
+	
 	public Optional<Employee> getEmployeeId(Integer employeeId) {
 		return employeeRepository.findById(employeeId);
 	}

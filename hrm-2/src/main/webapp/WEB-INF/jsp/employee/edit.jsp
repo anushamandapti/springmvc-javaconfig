@@ -14,7 +14,7 @@
     <form:form action="/edit" method="POST" modelAttribute="employee">
     
     	<form:label path="id">Id</form:label>
-    	<form:input type="text" path="id" disabled="true" />
+    	<form:input type="text" path="id" readonly="true" />
     
     	<form:label path="firstName">First Name</form:label>
     	<form:input type="text" path="firstName" placeholder="Enter FirstName" />
