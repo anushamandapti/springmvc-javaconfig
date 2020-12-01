@@ -24,22 +24,6 @@ public class EmployeeController {
 	@GetMapping(value = "/")
 	public ModelAndView index() {
 		System.out.println("EmployeeController.index()");
-//		List<Employee> employeeList = new ArrayList<>();
-//		Employee e1 = new Employee();
-//		e1.setFirstName("abc");
-//		e1.setLastName("xyz");
-//		e1.setEmail("abc@gmail.com");
-//		e1.setId(1);
-//		
-//		Employee e2 = new Employee();
-//		e2.setFirstName("hello");
-//		e2.setLastName("xyz");
-//		e2.setEmail("hello@gmail.com");
-//		e2.setId(2);
-//		
-//		employeeList.add(e1);
-//		employeeList.add(e2);
-		
 		Iterable<Employee> employeeList = employeeService.getAllEmployees();
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("employee/index");
